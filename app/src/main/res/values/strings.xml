@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">mya</string>
+    <string name="menu_home">홈</string>
+    <string name="menu_notice">게시판</string>
+</resources>

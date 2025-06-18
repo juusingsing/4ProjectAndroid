@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- 인터넷 사용 권한 (웹뷰에서 외부 URL을 불러오기 위해 필요) -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- 외부 저장소 읽기 권한 (사용자가 선택한 파일 접근을 위함) -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <!-- 외부 저장소 쓰기 권한 (파일을 저장하거나 수정하려는 경우 필요) -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <!-- Android 11(API 30) 이상에서 전체 외부 저장소 접근 권한 -->
+    <!-- 이 권한은 특별 권한으로, MANAGE_EXTERNAL_STORAGE는 사용자의 명시적 허가 필요 -->
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+
+    <!-- ✅ 위치 권한 추가 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!-- 카메라권한 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+
+    <!-- 알람권한 -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/>
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Mya"
+        android:usesCleartextTraffic="true"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:windowSoftInputMode="adjustResize"
+        android:requestLegacyExternalStorage="true"
+        tools:targetApi="31">
+
+        <!-- 알람권한 -->
+        <receiver android:name=".AlarmReceiver" />
+        <!--
+            allowBackup: 백업 허용 / dataExtractionRules, fullBackupContent: 백업 규칙 (Android 12+) /
+            icon, roundIcon: 앱 아이콘 / label: 앱 이름 / supportsRtl: RTL 지원 /
+            theme: 앱 테마 / usesCleartextTraffic: HTTP 허용 /
+            networkSecurityConfig: 네트워크 보안 설정 /
+            windowSoftInputMode: 키보드 시 UI 조정 / requestLegacyExternalStorage: 외부저장소 구버전 방식(Android 10) /
+            tools:targetApi: 도구용 타겟 API
+        -->
+
+
+        <!-- 메인 액티비티 정의: 앱 실행 시 가장 먼저 시작되는 화면 -->
+        <activity
+                android:name=".MainActivity"
+                android:exported="true"
+            >
+            <intent-filter>
+                <!-- 이 액티비티가 앱의 시작 지점임을 명시 -->
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+    </application>
+</manifest>
