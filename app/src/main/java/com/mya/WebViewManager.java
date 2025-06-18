@@ -21,7 +21,7 @@ import android.widget.Button;
 public class WebViewManager {
     private final Activity activity;              // 현재 액티비티 참조
     private final WebView webView;                // WebView 인스턴스
-    private final String baseUrl = "http://192.168.0.32:3000";  // 웹 페이지 기본 URL
+    private final String baseUrl = "http://192.168.0.30:3000";  // 웹 페이지 기본 URL
     private final FileChooserHandler fileChooserHandler;        // 파일 선택 처리 핸들러
     private final FileDownloadHandler fileDownloadHandler;      // 파일 다운로드 처리 핸들러
     private boolean gLoginCheck = true;           // 로그인 상태 플래그
