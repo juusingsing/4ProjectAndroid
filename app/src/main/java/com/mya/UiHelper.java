@@ -2,6 +2,7 @@ package com.mya;
 
 import android.app.Activity;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,10 +21,13 @@ public class UiHelper {
      */
     public static void setLoginStatus(Activity activity, boolean isLoggedIn) {
         // 하단 바와 버튼 참조
-        LinearLayout bottomBar = activity.findViewById(R.id.bottomBar);
-        Button btnMenu = activity.findViewById(R.id.btnMenu);
-        Button btnMyPage = activity.findViewById(R.id.btnMyPage);
-        Button btnBack = activity.findViewById(R.id.btnBack);
+        LinearLayout bottomBar = activity.findViewById(R.id.bottom_nav);
+        ImageButton menuHome = activity.findViewById(R.id.menuHome);
+        ImageButton menuDiary = activity.findViewById(R.id.menuDiary);
+        ImageButton menuCalendar = activity.findViewById(R.id.menuCalendar);
+        ImageButton menuWrite = activity.findViewById(R.id.menuWrite);
+        ImageButton menuMy = activity.findViewById(R.id.menuMy);
+
         bottomBar.post(new Runnable() {
             @Override
             public void run() {
@@ -31,22 +35,23 @@ public class UiHelper {
                     // 로그인 상태일 때: 모든 버튼을 균등하게 배치 (가중치 1씩 할당)
                     LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                             0, dpToPx(activity, 48), 1f);
-                    btnBack.setLayoutParams(params);
-                    btnMenu.setLayoutParams(params);
-                    btnMyPage.setLayoutParams(params);
+                    menuHome.setLayoutParams(params);
+                    menuDiary.setLayoutParams(params);
+                    menuCalendar.setLayoutParams(params);
+                    menuWrite.setLayoutParams(params);
+                    menuMy.setLayoutParams(params);
 
-                    // 메뉴, 마이페이지 버튼 표시
-                    btnMenu.setVisibility(View.VISIBLE);
-                    btnMyPage.setVisibility(View.VISIBLE);
+                    // 모든버튼 보임
+                    bottomBar.setVisibility((View.VISIBLE));
+
                 } else {
                     // 비로그인 상태일 때: 뒤로가기 버튼만 전체 너비 사용
-                    LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
-                            ViewGroup.LayoutParams.MATCH_PARENT, dpToPx(activity, 48));
-                    btnBack.setLayoutParams(params);
+//                    LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+//                            ViewGroup.LayoutParams.MATCH_PARENT, dpToPx(activity, 48));
 
-                    // 메뉴, 마이페이지 버튼 숨김
-                    btnMenu.setVisibility(View.GONE);
-                    btnMyPage.setVisibility(View.GONE);
+                    // 모든버튼 숨김
+                    bottomBar.setVisibility((View.GONE));
+
                 }
             }
         });
