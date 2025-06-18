@@ -36,44 +36,53 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-
-        <ImageView
+        <ImageButton
+            android:id="@+id/menuHome"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:backgroundTint="#526B5C"
             android:contentDescription="홈"
             android:src="@drawable/ic_home" />
 
 
-        <ImageView
+        <ImageButton
+            android:id="@+id/menuDiary"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:backgroundTint="#526B5C"
             android:contentDescription="일기"
             android:src="@drawable/ic_diary" />
 
 
-        <ImageView
+        <ImageButton
+            android:id="@+id/menuCalendar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:backgroundTint="#526B5C"
             android:contentDescription="달력"
             android:src="@drawable/ic_calendar" />
 
 
-        <ImageView
+        <ImageButton
+            android:id="@+id/menuWrite"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:backgroundTint="#526B5C"
             android:contentDescription="커뮤니티"
             android:src="@drawable/ic_community" />
 
 
 
-        <ImageView
+        <ImageButton
+            android:id="@+id/menuMy"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:backgroundTint="#526B5C"
             android:contentDescription="마이페이지"
             android:src="@drawable/ic_mypage" />
 

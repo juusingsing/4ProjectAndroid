@@ -20,6 +20,7 @@ import androidx.core.view.WindowInsetsCompat;
 import android.graphics.Bitmap;
 import java.io.ByteArrayOutputStream;
 import android.util.Base64;
+import android.widget.ImageButton;
 
 import com.mya.AlarmHelper;
 
@@ -71,13 +72,18 @@ public class MainActivity extends AppCompatActivity {
         webViewManager = new WebViewManager(this, findViewById(R.id.webview));
 
         // 버튼들 초기화 및 클릭 리스너 설정
-        Button btnBack = findViewById(R.id.btnBack);
-        Button btnMenu = findViewById(R.id.btnMenu);
-        Button btnMyPage = findViewById(R.id.btnMyPage);
 
-        btnBack.setOnClickListener(v -> webViewManager.goBackIfPossible());
-        btnMenu.setOnClickListener(v -> webViewManager.showMenuPopup(v));
-        btnMyPage.setOnClickListener(v -> webViewManager.loadMyPage());
+        ImageButton menuHome= findViewById(R.id.menuHome);
+        ImageButton menuDiary= findViewById(R.id.menuDiary);
+        ImageButton menuCalendar= findViewById(R.id.menuCalendar);
+        ImageButton menuWrite= findViewById(R.id.menuWrite);
+        ImageButton menuMy= findViewById(R.id.menuMy);
+
+        menuHome.setOnClickListener(v->webViewManager.homePage());
+        menuDiary.setOnClickListener(v->webViewManager.diaryPage());
+        menuCalendar.setOnClickListener(v->webViewManager.calendarPage());
+        menuWrite.setOnClickListener(v->webViewManager.writePage());
+        menuMy.setOnClickListener(v->webViewManager.myPage());
 
         Log.d("MainActivity", "onCreate 완료");
 

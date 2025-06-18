@@ -157,7 +157,11 @@ public class WebViewManager {
     public void loadMyPage() {
         webView.loadUrl(baseUrl + "/user/view.do");
     }
-
+    public void  homePage(){webView.loadUrl(baseUrl + "/home.do");}
+    public void  diaryPage(){webView.loadUrl(baseUrl + "/diary/list.do");}
+    public void  calendarPage(){webView.loadUrl(baseUrl + "/calendar.do");}
+    public void  writePage(){webView.loadUrl(baseUrl + "/write/list.do");}
+    public void  myPage(){webView.loadUrl(baseUrl + "/user/view.do");}
     /**
      * 로그인 상태를 확인하는 getter 메서드
      *
