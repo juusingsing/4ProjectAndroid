@@ -400,9 +400,10 @@ public class WebAppInterface {
 
             JSONArray alarmArray = new JSONArray(json);
 
+
             for (int i = 0; i < alarmArray.length(); i++) {
                 JSONObject obj = alarmArray.getJSONObject(i);
-                String type = obj.getString("type");
+                String type = obj.getString("types");
 
                 if ("SET_ALARM".equals(type)) {
                     AlarmHelper helper = new AlarmHelper();
