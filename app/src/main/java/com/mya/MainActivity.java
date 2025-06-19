@@ -23,6 +23,7 @@ import android.util.Base64;
 import android.widget.ImageButton;
 
 import com.mya.AlarmHelper;
+import android.content.res.Configuration;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -91,6 +92,11 @@ public class MainActivity extends AppCompatActivity {
 //        // 1일 간격 반복 알람 설정
 //        AlarmHelper alarmHelper = new AlarmHelper();
 //        alarmHelper.setRepeatingAlarm(this, 1);
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
     }
 
     // 카메라 권한 요청 메서드

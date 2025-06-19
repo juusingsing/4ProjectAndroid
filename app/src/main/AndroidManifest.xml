@@ -63,6 +63,8 @@
         <activity
                 android:name=".MainActivity"
                 android:exported="true"
+                android:configChanges="keyboardHidden|orientation|screenSize"
+                android:screenOrientation="portrait"
             >
             <intent-filter>
                 <!-- 이 액티비티가 앱의 시작 지점임을 명시 -->
